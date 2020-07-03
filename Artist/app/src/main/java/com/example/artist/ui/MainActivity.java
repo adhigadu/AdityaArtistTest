@@ -75,8 +75,9 @@ public class MainActivity extends AppCompatActivity implements TopArtistsFragmen
         }
         return false;
     }
+
     @OnClick(R.id.search)
-    void searchClick(){
+    void searchClick() {
         if (isValidSearch(searchEditText.getText().toString())) {
             searchUser(searchEditText.getText().toString());
         } else {
@@ -99,7 +100,7 @@ public class MainActivity extends AppCompatActivity implements TopArtistsFragmen
     // loops the base fragments and notify them to search with the given userName
     private void searchUser(String userName) {
         for (Fragment fr : mAdapter.getFragments()
-                ) {
+        ) {
             if (fr instanceof BaseFragment) {
                 ((BaseFragment) fr).searchUserName(userName);
             }

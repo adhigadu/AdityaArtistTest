@@ -1,10 +1,11 @@
 package com.example.artist.ui;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.artist.R;
 import com.example.artist.utils.DurationConverter;
@@ -13,8 +14,6 @@ import com.example.artist.utils.ImageLoader;
 import java.util.Objects;
 
 import butterknife.BindView;
-
-import static java.lang.Integer.parseInt;
 
 public class DetailsActivity extends AppCompatActivity {
     @BindView(R.id.img_track)
@@ -28,6 +27,8 @@ public class DetailsActivity extends AppCompatActivity {
     @BindView(R.id.txt_duration)
     TextView durationTextView;
     Bundle bundle;
+
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,8 +48,8 @@ public class DetailsActivity extends AppCompatActivity {
         playCountTextView.setText(bundle.getString("playCount"));
         if (!Objects.equals(bundle.getString("duration"), "")) {
             try {
-                durationTextView.setText(DurationConverter.getDurationInMinutesText(Long.parseLong(Objects.requireNonNull(bundle.getString("duration"))))+" Minuites");
-            } catch (Exception e){
+                durationTextView.setText(DurationConverter.getDurationInMinutesText(Long.parseLong(Objects.requireNonNull(bundle.getString("duration")))) + " Minuites");
+            } catch (Exception ignored) {
 
             }
 

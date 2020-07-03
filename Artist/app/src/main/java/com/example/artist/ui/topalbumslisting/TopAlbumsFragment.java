@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -16,7 +17,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.artist.R;
 import com.example.artist.adapters.TopAlbumsAdapter;
 import com.example.artist.models.Album;
-import com.example.artist.models.Artist;
 import com.example.artist.ui.BaseFragment;
 import com.example.artist.ui.DetailsActivity;
 import com.example.artist.ui.topalbumslisting.di.DaggerTopAlbumsComponent;
@@ -72,7 +72,7 @@ public class TopAlbumsFragment extends BaseFragment implements TopAlbumsView {
 
 
     @Override
-    public void onAttach(Context context) {
+    public void onAttach(@NonNull Context context) {
         super.onAttach(context);
         if (context instanceof OnFragmentInteractionListener) {
             mListener = (OnFragmentInteractionListener) context;

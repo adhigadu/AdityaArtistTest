@@ -7,8 +7,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 
 import com.example.artist.R;
 import com.example.artist.models.Track;
@@ -33,6 +33,7 @@ public class TopTracksAdapter extends RecyclerView.Adapter<TopTracksAdapter.View
         this.mOnItemClickListener = onClickListener;
     }
 
+    @NonNull
     @Override
     public TopTracksAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.track_item, parent, false);

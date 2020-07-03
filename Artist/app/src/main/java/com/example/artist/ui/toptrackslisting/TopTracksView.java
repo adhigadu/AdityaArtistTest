@@ -14,6 +14,8 @@ public interface TopTracksView {
     void showError();
 
     void updateData(List<Track> tracks);
+
     void showEmpty();
+
     void hidEmpty();
 }

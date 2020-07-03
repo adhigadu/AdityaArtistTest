@@ -124,11 +124,11 @@ public class TopArtistsFragment extends BaseFragment implements TopArtistsView {
             int position = artistsRecyclerView.getChildLayoutPosition(view);
             Artist artist = mAdapter.getItemByPosition(position);
             Intent intent = new Intent(getContext(), DetailsActivity.class);
-            intent.putExtra("name",artist.getName());
-            intent.putExtra("image",artist.getImageUrl());
-            intent.putExtra("playCount",artist.getPlaycount());
-            intent.putExtra("artist","");
-            intent.putExtra("duration","");
+            intent.putExtra("name", artist.getName());
+            intent.putExtra("image", artist.getImageUrl());
+            intent.putExtra("playCount", artist.getPlaycount());
+            intent.putExtra("artist", "");
+            intent.putExtra("duration", "");
             startActivity(intent);
         }
     };

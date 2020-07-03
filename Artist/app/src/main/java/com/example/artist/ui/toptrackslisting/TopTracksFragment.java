@@ -13,7 +13,6 @@ import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-
 import com.example.artist.R;
 import com.example.artist.adapters.TopTracksAdapter;
 import com.example.artist.models.Track;
@@ -163,11 +162,11 @@ public class TopTracksFragment extends BaseFragment implements TopTracksView {
                 int position = tracksRecyclerView.getChildAdapterPosition(view);
                 Track track = mAdapter.getItemAt(position);
                 Intent intent = new Intent(getContext(), DetailsActivity.class);
-                intent.putExtra("name",track.getName());
-                intent.putExtra("image",track.getImageUrl());
-                intent.putExtra("playCount",track.getPlaycount());
-                intent.putExtra("artist",track.getArtist().getName());
-                intent.putExtra("duration",track.getDuration());
+                intent.putExtra("name", track.getName());
+                intent.putExtra("image", track.getImageUrl());
+                intent.putExtra("playCount", track.getPlaycount());
+                intent.putExtra("artist", track.getArtist().getName());
+                intent.putExtra("duration", track.getDuration());
                 startActivity(intent);
             }
         }

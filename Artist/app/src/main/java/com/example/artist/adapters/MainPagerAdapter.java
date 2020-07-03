@@ -3,6 +3,7 @@ package com.example.artist.adapters;
 import android.content.Context;
 import android.view.ViewGroup;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
@@ -15,6 +16,7 @@ import com.example.artist.ui.toptrackslisting.TopTracksFragment;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.Hashtable;
+import java.util.Objects;
 
 
 public class MainPagerAdapter extends FragmentPagerAdapter {
@@ -36,6 +38,7 @@ public class MainPagerAdapter extends FragmentPagerAdapter {
         fragments = new Hashtable<>();
     }
 
+    @NonNull
     @Override
     public Fragment getItem(int position) {
         switch (position) {
@@ -82,7 +85,7 @@ public class MainPagerAdapter extends FragmentPagerAdapter {
     }
 
     @Override
-    public void destroyItem(ViewGroup container, int position, Object object) {
+    public void destroyItem(@NonNull ViewGroup container, int position, @NonNull Object object) {
         super.destroyItem(container, position, object);
         fragments.remove(position);
     }
@@ -90,7 +93,7 @@ public class MainPagerAdapter extends FragmentPagerAdapter {
     public ArrayList<Fragment> getFragments() {
         ArrayList<Fragment> list = new ArrayList<>();
         for (int i = 0; i < fragments.size(); i++) {
-            list.add(fragments.get(i).get());
+            list.add(Objects.requireNonNull(fragments.get(i)).get());
         }
         return list;
     }

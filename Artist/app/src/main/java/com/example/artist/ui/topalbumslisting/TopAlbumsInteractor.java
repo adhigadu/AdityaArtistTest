@@ -1,7 +1,6 @@
 package com.example.artist.ui.topalbumslisting;
 
 
-
 import com.example.artist.models.TopAlbumsResponse;
 
 import io.reactivex.Single;

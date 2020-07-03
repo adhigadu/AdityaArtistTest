@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity implements TopArtistsFragmen
     }
 
 
-    private void initializeFragments() {
+    public void initializeFragments() {
         mAdapter = new MainPagerAdapter(getSupportFragmentManager(), this);
         mViewPager.setAdapter(mAdapter);
         mViewPager.setOffscreenPageLimit(3);
@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity implements TopArtistsFragmen
         Toast.makeText(this, R.string.please_enter_a_user_name, Toast.LENGTH_SHORT).show();
     }
 
-    private boolean isValidSearch(String search) {
+    public boolean isValidSearch(String search) {
         if (TextUtils.isEmpty(search))
             return false;
         return true;

@@ -35,7 +35,7 @@ public class TopAlbumsPresenterTest {
     }
 
     @Test
-    public void testFindContactByName() {
+    public void testGetTopAlbums() {
         topAlbumsPresenter.getTopAlbums("b",5, Constants.API_KEY);
 
     }

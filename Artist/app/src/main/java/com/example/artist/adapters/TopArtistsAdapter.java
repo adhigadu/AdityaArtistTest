@@ -14,6 +14,7 @@ import com.example.artist.models.Artist;
 import com.example.artist.utils.ImageLoader;
 
 import java.util.List;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -62,7 +63,7 @@ public class TopArtistsAdapter extends RecyclerView.Adapter<TopArtistsAdapter.Vi
     }
 
     public void clearDataset() {
-        if(mDataset!=null){
+        if (mDataset != null) {
             mDataset.clear();
             notifyDataSetChanged();
         }

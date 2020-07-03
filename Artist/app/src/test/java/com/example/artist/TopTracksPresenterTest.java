@@ -34,7 +34,7 @@ public class TopTracksPresenterTest {
     }
 
     @Test
-    public void testFindContactByName() {
+    public void testGetTopTracks() {
         topTracksPresenterTest.getTopTracks("b",5, Constants.API_KEY);
 
     }

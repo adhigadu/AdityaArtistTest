@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/cv_track_item"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -11,7 +12,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/ripple_background"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:ignore="UselessParent">
 
         <ImageView
             android:id="@+id/img_track"
@@ -43,8 +45,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/margin5"
-                android:padding="5dp"
                 android:gravity="center"
+                android:padding="5dp"
                 android:textSize="18sp" />
 
 
@@ -52,17 +54,13 @@
                 android:id="@+id/lnr_plays"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/txt_track_artist"
                 android:layout_gravity="center"
-                android:layout_toEndOf="@+id/img_track"
                 android:orientation="horizontal"
                 android:padding="5dp">
 
                 <ImageView
-
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignEnd="@+id/txt_plays"
                     android:layout_gravity="center_vertical"
                     android:layout_margin="@dimen/margin5"
                     android:src="@drawable/play_icon" />

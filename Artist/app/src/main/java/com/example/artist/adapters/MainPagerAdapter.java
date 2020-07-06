@@ -21,9 +21,9 @@ import java.util.Objects;
 
 public class MainPagerAdapter extends FragmentPagerAdapter {
     private static final int NUMBER_OF_ITEMS = 3;
-    private static final int TOP_ARTISTS_INDEX = 0;
-    private static final int TOP_ALBUMS_INDEX = 1;
-    private static final int TOP_TRACKS_INDEX = 2;
+    private static final int TOP_ARTISTS_INDEX = 2;
+    private static final int TOP_ALBUMS_INDEX = 0;
+    private static final int TOP_TRACKS_INDEX = 1;
     private String topArtistsTitle;
     private String topTracksTitle;
     private String topAlbumsTitle;

@@ -2,6 +2,7 @@ package com.example.artist.network;
 
 
 import com.example.artist.models.TopTracksResponse;
+import com.example.artist.models.TopTracksResponseResult;
 
 import io.reactivex.Single;
 import retrofit2.http.GET;
@@ -9,7 +10,7 @@ import retrofit2.http.Query;
 
 
 public interface TopTracksService {
-    @GET("?method=user.gettoptracks&format=json")
-    Single<TopTracksResponse> getTopTracks(@Query("user") String user, @Query("limit") int limit, @Query("api_key") String apiKey);
+    @GET("?method=track.search&format=json")
+    Single<TopTracksResponseResult> getTopTracks(@Query("track") String user, @Query("api_key") String apiKey);
 
 }

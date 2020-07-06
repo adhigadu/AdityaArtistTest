@@ -1,6 +1,7 @@
 package com.example.artist.ui.toptrackslisting;
 
 import com.example.artist.models.TopTracksResponse;
+import com.example.artist.models.TopTracksResponseResult;
 import com.example.artist.models.Track;
 
 import java.util.ArrayList;
@@ -25,18 +26,18 @@ public class TopTracksPresenterImpl implements TopTracksPresenter {
     }
 
     @Override
-    public void getTopTracks(String userName, int limit, String apiKey) {
+    public void getTopTracks(String userName, String apiKey) {
         disposeRequest();
         mView.showProgress();
         mView.hidEmpty();
-        mDisposable = mInteractor.getTopTracks(userName, limit, apiKey)
+        mDisposable = mInteractor.getTopTracks(userName, apiKey)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .map(new Function<TopTracksResponse, List<Track>>() {
+                .map(new Function<TopTracksResponseResult, List<Track>>() {
                     @Override
-                    public List<Track> apply(@NonNull TopTracksResponse topTracksResponse) throws Exception {
-                        if (topTracksResponse != null && topTracksResponse.getTopTracks() != null && topTracksResponse.getTopTracks().getTracks() != null) {
-                            return topTracksResponse.getTopTracks().getTracks();
+                    public List<Track> apply(@NonNull TopTracksResponseResult topTracksResponse) throws Exception {
+                        if (topTracksResponse != null && topTracksResponse.getTopTracks() != null && topTracksResponse.getTopTracks().getTopTracks().getTracks() != null) {
+                            return topTracksResponse.getTopTracks().getTopTracks().getTracks();
                         }
                         return new ArrayList<Track>();
                     }

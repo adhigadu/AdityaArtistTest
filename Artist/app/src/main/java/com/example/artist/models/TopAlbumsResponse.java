@@ -12,6 +12,6 @@ public class TopAlbumsResponse {
         this.topAlbums = topAlbums;
     }
 
-    @SerializedName("topalbums")
+    @SerializedName("albummatches")
     TopAlbums topAlbums;
 }

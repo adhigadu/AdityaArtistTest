@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName;
 
 
 public class TopArtistsResponse {
-    @SerializedName("topartists")
+    @SerializedName("artistmatches")
     private TopArtists topArtists;
 
     public TopArtists getTopartists() {

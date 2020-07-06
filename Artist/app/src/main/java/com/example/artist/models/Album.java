@@ -12,7 +12,7 @@ public class Album {
     private String name;
     @SerializedName("image")
     private List<ImageItem> image;
-    @SerializedName("playcount")
+    @SerializedName("streamable")
     private String playCount;
     @SerializedName("artist")
     private Artist artist;

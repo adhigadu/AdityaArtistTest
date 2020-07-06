@@ -22,7 +22,7 @@ public class TopAlbumsPresenterTest {
             }
 
             @Override
-            public void getTopAlbums(String userName, int limit, String apiKey) {
+            public void getTopAlbums(String userName, String apiKey) {
 
             }
         };
@@ -36,7 +36,7 @@ public class TopAlbumsPresenterTest {
 
     @Test
     public void testGetTopAlbums() {
-        topAlbumsPresenter.getTopAlbums("b",5, Constants.API_KEY);
+        topAlbumsPresenter.getTopAlbums("b", Constants.API_KEY);
 
     }
 }

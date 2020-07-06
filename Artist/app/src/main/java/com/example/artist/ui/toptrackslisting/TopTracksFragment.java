@@ -63,7 +63,7 @@ public class TopTracksFragment extends BaseFragment implements TopTracksView {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        mPresenter.getTopTracks(Constants.DEFAULT_LASTFM_USER, Constants.TOP_ITEMS_LIMIT, Constants.API_KEY);
+        mPresenter.getTopTracks(Constants.DEFAULT_LASTFM_USER, Constants.API_KEY);
     }
 
     @Override
@@ -135,7 +135,7 @@ public class TopTracksFragment extends BaseFragment implements TopTracksView {
         if (mAdapter != null) {
             mAdapter.clearDataset();
         }
-        mPresenter.getTopTracks(userName, Constants.TOP_ITEMS_LIMIT, Constants.API_KEY);
+        mPresenter.getTopTracks(userName, Constants.API_KEY);
 
     }
 
@@ -166,7 +166,7 @@ public class TopTracksFragment extends BaseFragment implements TopTracksView {
                 intent.putExtra("image", track.getImageUrl());
                 intent.putExtra("playCount", track.getPlaycount());
                 intent.putExtra("artist", track.getArtist().getName());
-                intent.putExtra("duration", track.getDuration());
+                intent.putExtra("duration", "");
                 startActivity(intent);
             }
         }

@@ -2,6 +2,7 @@ package com.example.artist.ui.topalbumslisting;
 
 import com.example.artist.models.Album;
 import com.example.artist.models.TopAlbumsResponse;
+import com.example.artist.models.TopAlbumsResponseResult;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,18 +26,18 @@ public class TopAlbumsPresenterImpl implements TopAlbumsPresenter {
     }
 
     @Override
-    public void getTopAlbums(String userName, int limit, String apiKey) {
+    public void getTopAlbums(String userName, String apiKey) {
         mView.showProgress();
         mView.hidEmpty();
         disposeRequest();
-        mDisposable = mInteractor.getTopAlbums(userName, limit, apiKey)
+        mDisposable = mInteractor.getTopAlbums(userName, apiKey)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .map(new Function<TopAlbumsResponse, List<Album>>() {
+                .map(new Function<TopAlbumsResponseResult, List<Album>>() {
                     @Override
-                    public List<Album> apply(@NonNull TopAlbumsResponse topAlbumsResponse) throws Exception {
-                        if (topAlbumsResponse != null && topAlbumsResponse.getTopAlbums() != null && topAlbumsResponse.getTopAlbums().getAlbums() != null) {
-                            return topAlbumsResponse.getTopAlbums().getAlbums();
+                    public List<Album> apply(@NonNull TopAlbumsResponseResult topAlbumsResponse) throws Exception {
+                        if (topAlbumsResponse != null && topAlbumsResponse.getTopAlbums() != null && topAlbumsResponse.getTopAlbums() != null) {
+                            return topAlbumsResponse.getTopAlbums().getTopAlbums().getAlbums();
                         }
                         return new ArrayList<Album>();
                     }

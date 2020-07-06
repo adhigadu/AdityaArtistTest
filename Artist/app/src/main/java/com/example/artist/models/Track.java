@@ -6,29 +6,19 @@ import java.util.List;
 
 
 public class Track {
-    @SerializedName("duration")
-    private String duration;
+
     @SerializedName("mbid")
     private String mbid;
     @SerializedName("name")
     private String name;
     @SerializedName("image")
     private List<ImageItem> images;
-
-    @SerializedName("playcount")
+    @SerializedName("listeners")
     private String playcount;
     @SerializedName("artist")
     private Artist artist;
     @SerializedName("url")
     private String url;
-
-    public String getDuration() {
-        return duration;
-    }
-
-    public void setDuration(String duration) {
-        this.duration = duration;
-    }
 
     public String getMbid() {
         return mbid;

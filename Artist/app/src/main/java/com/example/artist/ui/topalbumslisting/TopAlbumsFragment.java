@@ -67,7 +67,7 @@ public class TopAlbumsFragment extends BaseFragment implements TopAlbumsView {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        mPresenter.getTopAlbums(Constants.DEFAULT_LASTFM_USER, Constants.TOP_ITEMS_LIMIT, Constants.API_KEY);
+        mPresenter.getTopAlbums(Constants.DEFAULT_LASTFM_USER, Constants.API_KEY);
     }
 
 
@@ -93,7 +93,7 @@ public class TopAlbumsFragment extends BaseFragment implements TopAlbumsView {
         if (mAdapter != null) {
             mAdapter.clearDataset();
         }
-        mPresenter.getTopAlbums(userName, Constants.TOP_ITEMS_LIMIT, Constants.API_KEY);
+        mPresenter.getTopAlbums(userName, Constants.API_KEY);
 
     }
 

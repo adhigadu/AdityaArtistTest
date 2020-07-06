@@ -47,7 +47,7 @@ public class TopTracksAdapter extends RecyclerView.Adapter<TopTracksAdapter.View
         holder.nameTextView.setText(item.getName());
         holder.artistTextView.setText(item.getArtist().getName());
         holder.playCountTextView.setText(item.getPlaycount());
-        holder.durationTextView.setText(DurationConverter.getDurationInMinutesText(Long.parseLong(item.getDuration())));
+        holder.durationTextView.setText("");
     }
 
     @Override

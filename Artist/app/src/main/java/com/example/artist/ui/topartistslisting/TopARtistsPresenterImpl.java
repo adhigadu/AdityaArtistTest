@@ -4,6 +4,7 @@ import android.util.Log;
 
 import com.example.artist.models.Artist;
 import com.example.artist.models.TopArtistsResponse;
+import com.example.artist.models.TopArtistsResponseResult;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,19 +34,19 @@ public class TopARtistsPresenterImpl implements TopArtistsPresenter {
     }
 
     @Override
-    public void getUserTopArtists(String userName, int limit, String apiKey) {
+    public void getUserTopArtists(String userName, String apiKey) {
         Log.e("getUserTopArtists", "getting data for" + userName);
         disposeRequest();
         mView.showProgress();
         mView.hidEmpty();
-        mDisposable = mInteractor.getTopArtists(userName, limit, apiKey)
+        mDisposable = mInteractor.getTopArtists(userName, apiKey)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .map(new Function<TopArtistsResponse, List<Artist>>() {
+                .map(new Function<TopArtistsResponseResult, List<Artist>>() {
                     @Override
-                    public List<Artist> apply(@NonNull TopArtistsResponse topArtistsResponse) throws Exception {
+                    public List<Artist> apply(@NonNull TopArtistsResponseResult topArtistsResponse) throws Exception {
                         if (topArtistsResponse != null && topArtistsResponse.getTopartists() != null) {
-                            return topArtistsResponse.getTopartists().getArtists();
+                            return topArtistsResponse.getTopartists().getTopartists().getArtists();
                         }
                         return new ArrayList<Artist>();
                     }

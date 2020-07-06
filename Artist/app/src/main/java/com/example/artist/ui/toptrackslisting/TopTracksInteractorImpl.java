@@ -2,6 +2,7 @@ package com.example.artist.ui.toptrackslisting;
 
 
 import com.example.artist.models.TopTracksResponse;
+import com.example.artist.models.TopTracksResponseResult;
 import com.example.artist.network.TopTracksService;
 
 import io.reactivex.Single;
@@ -16,7 +17,7 @@ public class TopTracksInteractorImpl implements TopTracksInteractor {
     }
 
     @Override
-    public Single<TopTracksResponse> getTopTracks(String userName, int limit, String apiKey) {
-        return mRetrofit.create(TopTracksService.class).getTopTracks(userName, limit, apiKey);
+    public Single<TopTracksResponseResult> getTopTracks(String userName, String apiKey) {
+        return mRetrofit.create(TopTracksService.class).getTopTracks(userName, apiKey);
     }
 }

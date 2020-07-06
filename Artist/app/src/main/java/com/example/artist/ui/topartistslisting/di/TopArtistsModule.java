@@ -1,6 +1,8 @@
 package com.example.artist.ui.topartistslisting.di;
 
 
+import android.util.Log;
+
 import com.example.artist.ui.topartistslisting.TopARtistsPresenterImpl;
 import com.example.artist.ui.topartistslisting.TopArtistsInteractor;
 import com.example.artist.ui.topartistslisting.TopArtistsInteractorImpl;
@@ -52,6 +54,7 @@ public class TopArtistsModule {
     @Singleton
     @Provides
     public Retrofit providesRetrofit(Converter.Factory converter, CallAdapter.Factory adapter) {
+        Log.d("url_str",adapter.toString());
         return new Retrofit.Builder()
                 .baseUrl(Constants.BASE_URL)
                 .addCallAdapterFactory(adapter)

@@ -4,7 +4,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.Editable;
 import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.view.KeyEvent;
 import android.view.WindowManager;
 import android.view.inputmethod.EditorInfo;
@@ -51,6 +53,23 @@ public class MainActivity extends AppCompatActivity implements TopArtistsFragmen
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         looseSearchEditTextFocus();
+        searchEditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                if(s.length() == 0)
+                    searchUser("po");
+            }
+        });
         initializeFragments();
     }
 
@@ -75,6 +94,8 @@ public class MainActivity extends AppCompatActivity implements TopArtistsFragmen
         }
         return false;
     }
+
+
 
     @OnClick(R.id.search)
     void searchClick() {

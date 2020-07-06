@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName;
 
 
 public class TopTracksResponse {
-    @SerializedName("toptracks")
+    @SerializedName("trackmatches")
     private TopTracks topTracks;
 
     public TopTracks getTopTracks() {

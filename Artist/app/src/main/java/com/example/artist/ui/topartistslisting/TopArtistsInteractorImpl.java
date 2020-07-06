@@ -2,6 +2,7 @@ package com.example.artist.ui.topartistslisting;
 
 
 import com.example.artist.models.TopArtistsResponse;
+import com.example.artist.models.TopArtistsResponseResult;
 import com.example.artist.network.TopArtistsService;
 
 import io.reactivex.Single;
@@ -16,7 +17,7 @@ public class TopArtistsInteractorImpl implements TopArtistsInteractor {
     }
 
     @Override
-    public Single<TopArtistsResponse> getTopArtists(String userName, int limit, String apiKey) {
-        return mRetrofit.create(TopArtistsService.class).getTopArtists(userName, limit, apiKey);
+    public Single<TopArtistsResponseResult> getTopArtists(String userName, String apiKey) {
+        return mRetrofit.create(TopArtistsService.class).getTopArtists(userName, apiKey);
     }
 }

@@ -36,7 +36,7 @@ public class TopAlbumsPresenterImpl implements TopAlbumsPresenter {
                 .map(new Function<TopAlbumsResponseResult, List<Album>>() {
                     @Override
                     public List<Album> apply(@NonNull TopAlbumsResponseResult topAlbumsResponse) throws Exception {
-                        if (topAlbumsResponse != null && topAlbumsResponse.getTopAlbums() != null && topAlbumsResponse.getTopAlbums() != null) {
+                        if (topAlbumsResponse != null && topAlbumsResponse.getTopAlbums() != null) {
                             return topAlbumsResponse.getTopAlbums().getTopAlbums().getAlbums();
                         }
                         return new ArrayList<Album>();

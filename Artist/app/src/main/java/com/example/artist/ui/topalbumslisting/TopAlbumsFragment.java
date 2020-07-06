@@ -147,8 +147,8 @@ public class TopAlbumsFragment extends BaseFragment implements TopAlbumsView {
                 Intent intent = new Intent(getContext(), DetailsActivity.class);
                 intent.putExtra("name", album.getName());
                 intent.putExtra("image", album.getImageUrl());
-                intent.putExtra("playCount", album.getPlaycount());
-                intent.putExtra("artist", album.getArtist().getName());
+                intent.putExtra("playCount", "");
+                intent.putExtra("artist", album.getArtist());
                 intent.putExtra("duration", "");
                 startActivity(intent);
                 //   mListener.onAlbumClicked(mAdapter.getItemByPosition(position));

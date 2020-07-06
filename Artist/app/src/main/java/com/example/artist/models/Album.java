@@ -6,19 +6,29 @@ import java.util.List;
 
 
 public class Album {
-    @SerializedName("mbid")
-    private String mbid;
+
     @SerializedName("name")
     private String name;
+
+    @SerializedName("artist")
+    private String artist;
+    @SerializedName("url")
+    private String url;
     @SerializedName("image")
     private List<ImageItem> image;
     @SerializedName("streamable")
-    private String playCount;
-    @SerializedName("artist")
-    private Artist artist;
-    @SerializedName("url")
-    private String url;
+    private String streamable;
+    @SerializedName("mbid")
+    private String mbid;
 
+
+    public String getArtist() {
+        return artist;
+    }
+
+    public void setArtist(String artist) {
+        this.artist = artist;
+    }
     public String getMbid() {
         return mbid;
     }
@@ -43,21 +53,6 @@ public class Album {
         this.image = image;
     }
 
-    public String getPlaycount() {
-        return playCount;
-    }
-
-    public void setPlaycount(String playcount) {
-        this.playCount = playcount;
-    }
-
-    public Artist getArtist() {
-        return artist;
-    }
-
-    public void setArtist(Artist artist) {
-        this.artist = artist;
-    }
 
     public String getUrl() {
         return url;
@@ -77,5 +72,13 @@ public class Album {
             }
         }
         return null;
+    }
+
+    public String getStreamable() {
+        return streamable;
+    }
+
+    public void setStreamable(String streamable) {
+        this.streamable = streamable;
     }
 }

@@ -45,7 +45,7 @@ public class TopTracksAdapter extends RecyclerView.Adapter<TopTracksAdapter.View
         Track item = mDataset.get(position);
         ImageLoader.loadImage(mContext, item.getImageUrl(), R.drawable.default_track, holder.trackImageView);
         holder.nameTextView.setText(item.getName());
-        holder.artistTextView.setText(item.getArtist().getName());
+        holder.artistTextView.setText(item.getArtist());
         holder.playCountTextView.setText(item.getPlaycount());
         holder.durationTextView.setText("");
     }

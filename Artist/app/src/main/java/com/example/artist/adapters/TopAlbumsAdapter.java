@@ -44,8 +44,8 @@ public class TopAlbumsAdapter extends RecyclerView.Adapter<TopAlbumsAdapter.View
         Album item = mDataset.get(position);
         ImageLoader.loadImage(mContext, item.getImageUrl(), R.drawable.default_album, holder.albumImageView);
         holder.nameTextView.setText(item.getName());
-        holder.playCountTextView.setText(item.getPlaycount());
-        holder.artistTextView.setText(item.getArtist().getName());
+        holder.playCountTextView.setText("");
+        holder.artistTextView.setText(item.getArtist());
     }
 
     @Override

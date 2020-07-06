@@ -7,7 +7,7 @@
     <string name="times">times</string>
     <string name="plays">plays</string>
     <string name="minutes">minutes.</string>
-    <string name="search_users_hint">Enter last.fm user name</string>
+    <string name="search_users_hint">Search</string>
     <string name="empty_here">It\'s empty here, try another user name</string>
     <string name="general_error">An error has happened, please try again</string>
     <string name="please_enter_a_user_name">Please enter a user name</string>

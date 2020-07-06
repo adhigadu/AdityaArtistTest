@@ -16,7 +16,7 @@ public class Track {
     @SerializedName("listeners")
     private String playcount;
     @SerializedName("artist")
-    private Artist artist;
+    private String artist;
     @SerializedName("url")
     private String url;
 
@@ -52,11 +52,11 @@ public class Track {
         this.playcount = playcount;
     }
 
-    public Artist getArtist() {
+    public String getArtist() {
         return artist;
     }
 
-    public void setArtist(Artist artist) {
+    public void setArtist(String artist) {
         this.artist = artist;
     }
 

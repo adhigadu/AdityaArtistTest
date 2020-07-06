@@ -36,7 +36,7 @@ public class TopTracksPresenterImpl implements TopTracksPresenter {
                 .map(new Function<TopTracksResponseResult, List<Track>>() {
                     @Override
                     public List<Track> apply(@NonNull TopTracksResponseResult topTracksResponse) throws Exception {
-                        if (topTracksResponse != null && topTracksResponse.getTopTracks() != null && topTracksResponse.getTopTracks().getTopTracks().getTracks() != null) {
+                        if (topTracksResponse != null && topTracksResponse.getTopTracks() != null) {
                             return topTracksResponse.getTopTracks().getTopTracks().getTracks();
                         }
                         return new ArrayList<Track>();

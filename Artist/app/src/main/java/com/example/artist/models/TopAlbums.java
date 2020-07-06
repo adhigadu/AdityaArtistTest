@@ -6,6 +6,9 @@ import java.util.List;
 
 
 public class TopAlbums {
+    @SerializedName("album")
+    List<Album> albums;
+
     public List<Album> getAlbums() {
         return albums;
     }
@@ -14,6 +17,5 @@ public class TopAlbums {
         this.albums = albums;
     }
 
-    @SerializedName("album")
-    List<Album> albums;
+
 }

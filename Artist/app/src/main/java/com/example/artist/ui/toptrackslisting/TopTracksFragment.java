@@ -165,7 +165,7 @@ public class TopTracksFragment extends BaseFragment implements TopTracksView {
                 intent.putExtra("name", track.getName());
                 intent.putExtra("image", track.getImageUrl());
                 intent.putExtra("playCount", track.getPlaycount());
-                intent.putExtra("artist", track.getArtist().getName());
+                intent.putExtra("artist", track.getArtist());
                 intent.putExtra("duration", "");
                 startActivity(intent);
             }

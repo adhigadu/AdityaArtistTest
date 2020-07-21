@@ -1,14 +1,12 @@
 package com.example.artist
 
-import com.example.artist.ui.topalbumslisting.*
-import com.example.artist.utils.Constants
+import com.example.artist.ui.topalbumslisting.TopAlbumsFragment
+import com.example.artist.ui.topalbumslisting.TopAlbumsInteractorImpl
+import com.example.artist.ui.topalbumslisting.TopAlbumsPresenterImpl
 import org.junit.After
-import org.junit.Assert
 import org.junit.Before
 import org.junit.Test
-import org.mockito.Mock
 import org.mockito.Mockito
-import kotlin.text.Typography.times
 
 class TopAlbumsPresenterTest {
     lateinit var topAlbumsPresenter: TopAlbumsPresenterImpl

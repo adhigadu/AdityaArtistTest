@@ -1,12 +1,9 @@
 package com.example.artist.ui.topalbumslisting
 
 import com.example.artist.models.Album
-import com.example.artist.models.TopAlbumsResponseResult
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
-import io.reactivex.functions.Function
 import io.reactivex.schedulers.Schedulers
-import java.util.*
 
 class TopAlbumsPresenterImpl(var mView: TopAlbumsView, var mInteractor: TopAlbumsInteractor) : TopAlbumsPresenter {
     var mDisposable: Disposable? = null

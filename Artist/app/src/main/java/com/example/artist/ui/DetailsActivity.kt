@@ -8,7 +8,6 @@ import com.example.artist.R
 import com.example.artist.utils.DurationConverter
 import com.example.artist.utils.ImageLoader.loadImage
 import kotlinx.android.synthetic.main.activity_details.*
-import java.util.*
 
 class DetailsActivity : AppCompatActivity() {
     var bundle: Bundle? = null

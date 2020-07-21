@@ -4,7 +4,6 @@ import com.example.artist.models.Track
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
-import java.util.*
 
 class TopTracksPresenterImpl(var mView: TopTracksView, var mInteractor: TopTracksInteractor) : TopTracksPresenter {
     var mDisposable: Disposable? = null

@@ -21,7 +21,7 @@ data class Album(
         @SerializedName("mbid")
         var mbid: String
 
-        ) {
+) {
     val imageUrl: String?
         get() {
             if (image.isNotEmpty()) {

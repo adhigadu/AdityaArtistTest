@@ -11,8 +11,6 @@ import android.view.KeyEvent
 import android.view.WindowManager
 import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
-import android.widget.EditText
-import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -24,7 +22,6 @@ import com.example.artist.models.Track
 import com.example.artist.ui.topalbumslisting.TopAlbumsFragment
 import com.example.artist.ui.topartistslisting.TopArtistsFragment
 import com.example.artist.ui.toptrackslisting.TopTracksFragment
-import com.google.android.material.tabs.TabLayout
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), TopArtistsFragment.OnFragmentInteractionListener, TopAlbumsFragment.OnFragmentInteractionListener, TopTracksFragment.OnFragmentInteractionListener {

@@ -5,7 +5,6 @@ import com.example.artist.models.Artist
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
-import java.util.*
 
 class TopArtistsPresenterImpl(var mView: TopArtistsView, var mInteractor: TopArtistsInteractor) : TopArtistsPresenter {
     var mDisposable: Disposable? = null
